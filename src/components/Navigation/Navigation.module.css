@@ -1,0 +1,23 @@
+.container {
+    padding: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 3px grey;
+}
+
+.link {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.active_link {
+    color: #223af2;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 30px;
+}

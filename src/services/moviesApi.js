@@ -4,13 +4,13 @@ axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 const KEY = 'a44bb9523e0650c67fadd4918a95b1b0';
 
 export async function fetchTrending() {
-  const response = await axios.get(`/trending/all/day?api_key=${KEY}`);
+  const response = await axios.get(`/trending/movie/day?api_key=${KEY}`);
   return response.data;
 }
 
-export async function searchMovies() {
+export async function searchMovie(searchString) {
   const response = await axios.get(
-    `/search/movie?api_key=${KEY}&language=en-US&page=1&include_adult=false`
+    `/search/movie?api_key=${KEY}&query=${searchString}`
   );
   return response.data;
 }
@@ -29,7 +29,7 @@ export async function movieCredits(id) {
   return response.data;
 }
 
-export async function movieReviews(id) {
+export async function moviesReviews(id) {
   const response = await axios.get(
     `/movie/${id}/reviews?api_key=${KEY}&language=en-US`
   );
