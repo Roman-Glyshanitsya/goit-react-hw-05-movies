@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import s from './SearchForm.module.css';
 import PropTypes from 'prop-types';
 
-export default function MovieSearchForm({onSubmit}) {
-    const [searchMovie, setSearchMovie] = useState('');
+export default function MovieSearchForm({ onSubmit }) {
+    const [searchParams, setSearchParams] = useSearchParams();
+    const query = searchParams.get('query');
+    const [searchMovie, setSearchMovie] = useState(query ?? '');
 
     const handleChange = event => {
         setSearchMovie(event.currentTarget.value.toLowerCase());
@@ -18,14 +21,15 @@ export default function MovieSearchForm({onSubmit}) {
             return;
         }
 
-        onSubmit(searchMovie);
-        setSearchMovie('');
+        setSearchParams({query: searchMovie})
     }
 
     return(
         <form className={s.searchForm}>
             <input
                 type="text"
+                value={searchMovie}
+                name="query"
                 autoComplete="off"
                 autoFocus
                 placeholder="Search movie"

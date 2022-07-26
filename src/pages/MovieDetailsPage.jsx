@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useParams, Link, Outlet, useLocation} from 'react-router-dom';
 import { movieDetails } from '../services/moviesApi.js'
 import MovieDetails from 'components/MovieDetails/MovieDetails'
@@ -43,7 +43,10 @@ export default function MovieView() {
                 <li><Link to={`/movies/${movieId}/cast`} state={{ from: path }}>Cast</Link></li>
                 <li><Link to={`/movies/${movieId}/reviews`} state={{ from: path }}>Reviews</Link></li>
             </ul>
-            <Outlet />
+            <Suspense>
+                <Outlet />
+            </Suspense>
+            
         </div>
     )
 }

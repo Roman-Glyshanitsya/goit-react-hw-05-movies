@@ -4,10 +4,10 @@ export default function Reviews({reviews}) {
     return(
         <div>
             <ul>
-                {reviews.map(review => 
-                    <li key={review.id}>
-                        <p>Author: <b>{review.author}</b></p>
-                        {review.content}
+                {reviews.map(({id, author, content}) => 
+                    <li key={id}>
+                        <p>Author: <b>{author}</b></p>
+                        {content}
                     </li>
                 )};
             </ul>
@@ -16,5 +16,11 @@ export default function Reviews({reviews}) {
 }
 
 Reviews.propTypes = {
-    reviews: PropTypes.array.isRequired
-}
+    reviews: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string,
+            author: PropTypes.string,
+            content: PropTypes.string,
+        })
+    ).isRequired,
+};

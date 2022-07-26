@@ -1,17 +1,15 @@
 import PropTypes from 'prop-types';
 import s from './Cast.module.css';
 
-export default function Cast(props) {
-    const {cast} = props
-
+export default function Cast({cast}) {
     return(
         <div>
             <h3>Cast</h3>
             <ul>
-                {cast.map(actor => 
-                    <li key={actor.id} className={s.item}>
-                        <img src={`https://image.tmdb.org/t/p/w200/${actor.profile_path}`} alt={actor.name} width="100px"/>
-                        {actor.name}
+                {cast.map(({id, profile_path, name }) => 
+                    <li key={id} className={s.item}>
+                        <img src={`https://image.tmdb.org/t/p/w200/${profile_path}`} alt={name} width="100px"/>
+                        {name}
                     </li>
                 )}
             </ul>
@@ -20,5 +18,11 @@ export default function Cast(props) {
 }
 
 Cast.propTypes = {
-    cast: PropTypes.array.isRequired
-}
+    cast: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number,
+            profile_path: PropTypes.string,
+            name: PropTypes.string,
+        }).isRequired
+    )
+};
