@@ -27,7 +27,14 @@
 }
 
 .home__item img {
+    transition: transform 0.3s ease;
+    display: block;
     width: 100%;
+    height: auto;
+}
+
+.home__item:hover img {
+    transform: scale(1.05);
 }
 
 .home__item__textContainer {
