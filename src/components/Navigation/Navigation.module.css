@@ -1,23 +1,37 @@
-.container {
-    padding: 20px;
+.navigation__container {
+    padding: 30px;
     margin-bottom: 10px;
-    box-shadow: 0 2px 3px grey;
+    display: flex;
+    justify-content: right;
+    gap: 30px;
 }
 
 .link {
-    color: black;
-    font-size: 20px;
+    font-size: 40px;
     font-weight: bold;
-    margin-right: 30px;
+    letter-spacing: 1px;
 }
 
-.link:hover {
-    text-decoration: underline;
+.link:after {
+    content: "";
+    display: block;
+    width: 95%;
+    height: 4px;
+    background: currentColor;
+    transform: scale(0);
+    transform-origin: center right;
+    transition: transform 400ms ease-in-out;
 }
 
-.active_link {
-    color: #223af2;
-    font-size: 20px;
+.link:hover:after {
+    transform: scale(1.1);
+    transform-origin: center left;
+
+}
+
+.active__link {
+    color: red;
+    font-size: 40px;
     font-weight: bold;
-    margin-right: 30px;
+    letter-spacing: 1px;
 }
