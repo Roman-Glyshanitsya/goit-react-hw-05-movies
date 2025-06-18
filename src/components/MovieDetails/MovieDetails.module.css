@@ -1,6 +1,7 @@
 .container {
     display: flex;
     gap: 30px;
+    margin-bottom: 30px;
     /* border-bottom: 3px solid #A2B5BB; */
 }
 
@@ -15,8 +16,13 @@
 
 .textContainer {
     width: 680px;
+
 }
 
-.movieTitle {
+.userScore {
+    margin-bottom: 30px;
+}
+
+.overview {
     margin-bottom: 30px;
 }

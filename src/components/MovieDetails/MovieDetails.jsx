@@ -14,11 +14,13 @@ export default function MovieDetails({ movie }) {
         <h1 className={s.movieTitle}>
           {movie.title} ({movie.release_date.slice(0, 4)})
         </h1>
-        <p>User Score: {movie.vote_average.toFixed(1)}</p>
+        <p className={s.userScore}>
+          User Rating: {movie.vote_average.toFixed(1)}
+        </p>
         <h2>Overview</h2>
-        <p>{movie.overview}</p>
+        <p className={s.overview}>{movie.overview}</p>
         <h2>Genres</h2>
-        {movie.genres.map(g => g.name + ' ')}
+        <p className={s.genres}> {movie.genres.map(g => g.name + ' ')}</p>
       </div>
     </div>
   );

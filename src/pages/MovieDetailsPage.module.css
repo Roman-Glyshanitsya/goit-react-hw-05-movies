@@ -3,3 +3,27 @@
 }
 
 .back__btn {}
+
+.infoList {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.infoLink:after {
+    content: "";
+    display: block;
+    width: 95%;
+    height: 4px;
+    background: currentColor;
+    transform: scale(0);
+    transform-origin: center right;
+    transition: transform 400ms ease-in-out;
+}
+
+.infoLink:hover:after {
+    transform: scale(1.1);
+    transform-origin: center left;
+
+}

@@ -38,16 +38,24 @@ export default function MovieView() {
         <button className={s.back__btn}>Go back</button>
       </Link>
       {movie && <MovieDetails movie={movie} />}
-      <h4>Additional information</h4>
-      <ul>
+      <h2>Additional information</h2>
+      <ul className={s.infoList}>
         <li>
-          <Link to={`/movies/${movieId}/cast`} state={{ from: path }}>
+          <Link
+            to={`/movies/${movieId}/cast`}
+            state={{ from: path }}
+            className={s.infoLink}
+          >
             Cast
           </Link>
         </li>
         <li>
-          <Link to={`/movies/${movieId}/reviews`} state={{ from: path }}>
-            Reviews
+          <Link
+            to={`/movies/${movieId}/reviews`}
+            state={{ from: path }}
+            className={s.infoLink}
+          >
+            Review
           </Link>
         </li>
       </ul>
