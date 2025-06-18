@@ -10,7 +10,11 @@ export default function Cast({ cast }) {
           .map(({ id, profile_path, name }) => (
             <li key={id} className={s.item}>
               <img
-                src={`https://image.tmdb.org/t/p/w200/${profile_path}`}
+                src={
+                  profile_path === null
+                    ? `🍟`
+                    : `https://image.tmdb.org/t/p/w200/${profile_path}`
+                }
                 alt={name}
                 width="100px"
               />
