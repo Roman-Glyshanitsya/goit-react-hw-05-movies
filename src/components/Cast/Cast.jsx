@@ -12,7 +12,7 @@ export default function Cast({ cast }) {
               <img
                 src={
                   profile_path === null
-                    ? `🍟`
+                    ? ``
                     : `https://image.tmdb.org/t/p/w200/${profile_path}`
                 }
                 alt={name}
