@@ -2,7 +2,30 @@
     padding: 50px;
 }
 
-.back__btn {}
+.back__btn {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 28px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 120px;
+    height: 30px;
+    margin-bottom: 20px;
+    transition: all 400ms linear;
+}
+
+.back__btn__icon {
+    height: 100%;
+    width: auto;
+}
+
+.back__btn:hover {
+    color: red;
+}
 
 .infoList {
     display: flex;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchTrending } from '../services/moviesApi.js';
+import { fetchTrending } from '../../services/moviesApi.js';
 import s from './HomePage.module.css';
 
 export default function HomeView() {
