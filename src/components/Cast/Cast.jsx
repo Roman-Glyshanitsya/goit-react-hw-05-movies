@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import s from './Cast.module.css';
+import noImage from '../../images/no-image.png';
 
 export default function Cast({ cast }) {
   return (
@@ -11,9 +12,9 @@ export default function Cast({ cast }) {
             <li key={id} className={s.item}>
               <img
                 src={
-                  profile_path === null
-                    ? ``
-                    : `https://image.tmdb.org/t/p/w200/${profile_path}`
+                  profile_path
+                    ? `https://image.tmdb.org/t/p/w200/${profile_path}`
+                    : noImage
                 }
                 alt={name}
                 width="100px"

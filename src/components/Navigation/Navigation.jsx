@@ -8,13 +8,13 @@ export default function Navigation() {
         to="/"
         className={({ isActive }) => (isActive ? s.active__link : s.link)}
       >
-        Home
+        Trending
       </NavLink>
       <NavLink
         to="/movies"
         className={({ isActive }) => (isActive ? s.active__link : s.link)}
       >
-        Movies
+        Search Movies
       </NavLink>
     </nav>
   );
