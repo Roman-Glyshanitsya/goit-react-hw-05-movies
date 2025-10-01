@@ -1,0 +1,30 @@
+.container {
+    padding: 50px;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.item {
+    width: 200px;
+    border: 1px solid white;
+    background-color: black;
+}
+
+.link {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.image {
+    margin-bottom: 10px;
+}
+
+.title {
+    padding: 5px;
+}

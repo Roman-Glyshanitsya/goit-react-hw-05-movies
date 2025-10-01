@@ -1,12 +1,17 @@
 import PropTypes from 'prop-types';
 import s from './MovieDetails.module.css';
+import noImage from '../../images/no-image.png';
 
 export default function MovieDetails({ movie }) {
   return (
     <div className={s.container}>
       <div className={s.imageWrapper}>
         <img
-          src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+          src={
+            movie.poster_path
+              ? `https://image.tmdb.org/t/p/w200/${movie.poster_path}`
+              : noImage
+          }
           alt={movie.title}
         />
       </div>
